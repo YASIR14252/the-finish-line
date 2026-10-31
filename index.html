@@ -14,6 +14,16 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Readex Pro',Tahoma,'Segoe UI',sans-serif;line-height:1.7}
+/* إخفاء شريط التمرير في متصفحات كروم، سفاري، وإيدج */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* إخفاء شريط التمرير في فايرفوكس */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 .wrap{max-width:1180px;margin:0 auto;padding:24px clamp(16px,4vw,48px) 80px}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
