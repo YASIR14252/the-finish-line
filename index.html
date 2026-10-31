@@ -14,15 +14,21 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Readex Pro',Tahoma,'Segoe UI',sans-serif;line-height:1.7}
-/* إخفاء شريط التمرير مع الحفاظ على تمرير الصفحة وثبات المحاذاة */
+/* إخفاء شريط التمرير وثبات الصفحة تماماً في المنتصف */
 html {
   overflow-y: scroll;
-  scrollbar-width: none;        /* لمتصفح فايرفوكس */
-  -ms-overflow-style: none;     /* لمتصفح إيدج القديم */
+  scrollbar-width: none;          /* لمتصفح فايرفوكس */
+  -ms-overflow-style: none;       /* لمتصفح إيدج */
 }
 
 html::-webkit-scrollbar {
-  display: none;                /* لمتصفحات كروم وسفاري وإيدج الحديثة */
+  width: 0px;
+  background: transparent;        /* إلغاء مساحة شريط التمرير في كروم وسفاري */
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;             /* منع التمرير الأفقي المسبب للميلان */
 }
 .wrap{max-width:1180px;margin:0 auto;padding:24px clamp(16px,4vw,48px) 80px}
 button,input,select,textarea{font:inherit;color:inherit}
